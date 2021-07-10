@@ -12,13 +12,12 @@ public class ProxyBizFilter implements HttpRequestFilter{
     public void filter(FullHttpRequest fullRequest, ChannelHandlerContext ctx) {
 
         String uri = fullRequest.uri();
-        System.out.println(" filter(FullHttpRequest fullRequest, ChannelHandlerContext ctx)接收到的请求,url: " + uri);
+        System.out.println(" proxyBizFilter接收到的请求,url: " + uri);
         HttpHeaders headers = fullRequest.headers();
         if (uri.startsWith("/hello")) {
             System.out.println("支持的uri"+uri);
         } else {
             System.out.println("不支持的uri"+uri);
-            headers=null;
         }
 
         if (headers == null) {
