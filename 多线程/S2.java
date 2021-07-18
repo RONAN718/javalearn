@@ -12,7 +12,7 @@ public class S2 {
                 new Callable<Integer>() {
                     @Override
                     public Integer call() throws Exception {
-                       return sum();
+                        return sum();
                     }
                 }
 
@@ -26,13 +26,12 @@ public class S2 {
             e.printStackTrace();
         }
         System.out.println("异步计算结果为："+result);
-
         System.out.println("使用时间："+ (System.currentTimeMillis()-start) + " ms");
         executors.shutdownNow();
     }
 
     private static int sum() {
-        return fibo(45);
+        return fibo(36);
     }
 
     private static int fibo(int a) {

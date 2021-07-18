@@ -3,7 +3,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 public class S1 {
-//Callable解决 单线程
+    //Callable解决 单线程
     public static void main(String[] args) {
 
         long start=System.currentTimeMillis();
@@ -25,12 +25,11 @@ public class S1 {
             e.printStackTrace();
         }
         System.out.println("异步计算结果为："+result);
-
         System.out.println("使用时间："+ (System.currentTimeMillis()-start) + " ms");
     }
 
     private static int sum() {
-        return fibo(45);
+        return fibo(36);
     }
 
     private static int fibo(int a) {
