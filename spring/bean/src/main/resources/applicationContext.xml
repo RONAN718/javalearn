@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+    <bean name="ronan0"
+          class="com.tzh.demo.bean.Person">
+        <property name="id" value="100"/>
+        <property name="name" value="tzh"/>
+        <property name="age" value="22"/>
+        <property name="nickname" value="ronan"/>
+    </bean>
+
+    <bean name="ronan1"
+          class="com.tzh.demo.bean.Person">
+        <property name="id" value="101"/>
+        <property name="name" value="tzh"/>
+        <property name="age" value="22"/>
+        <property name="nickname" value="ronan"/>
+    </bean>
+
+    <bean id="group1" class="com.tzh.demo.bean.Group">
+    <property name="groupName" value="group001"/>
+            <property name="persons">
+            <list>
+                <ref bean="ronan0"/>
+                <ref bean="ronan1"/>
+            </list>
+            </property>
+    </bean>
+    <context:annotation-config />
+
+    <bean id="company" class="com.tzh.demo.bean.Company"/>
+</beans>
